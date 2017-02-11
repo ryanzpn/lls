@@ -1,6 +1,7 @@
 package controllers
 
 import (
+    "time"
     "os"
     "io"
     "bytes"
@@ -186,4 +187,6 @@ func Min(a, b int) int {
     return b
 }
 
-
+func Now() int64 {
+    return time.Now().UnixNano() / 1000000
+}

@@ -4,7 +4,6 @@ import (
     "os"
     "strings"
     "strconv"
-    "time"
 )
 
 type ChatroomController struct {
@@ -62,7 +61,7 @@ func (this *ChatroomController) Talk() {
 
     // uname side
     read_dir := strings.Join([]string{"status", uname, recipient, "read.txt"}, "/")
-    now := time.Now().Unix()
+    now := Now()
     timestamp := strconv.FormatInt(now, 10)
 
     read := timestamp + "\t0\t" + content + "\n"

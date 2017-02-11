@@ -7,7 +7,7 @@ var chat_history = function () {
         $("#chatbox").empty();
 
         $.each(data, function (i, stat) {
-            $("#chatbox").append("<li>" + (new Date(parseInt(stat.timestamp + "000"))).toString().substring(8, 24) + " <b>" + stat.speaker + "</b>: " + stat.line + "</li>");
+            $("#chatbox").append("<li>" + (new Date(parseInt(stat.timestamp))).toString().substring(4, 24) + " <b>" + stat.speaker + "</b>: " + stat.line + "</li>");
         });
     });
 }
@@ -43,7 +43,7 @@ var listen = function() {
                }
 
                $.each(data, function (i, stat) {
-                   $("#chatbox").append("<li>" + (new Date(parseInt(stat.timestamp + "000"))).toString().substring(8, 24) + " <b>" + stat.speaker + "</b>: " + stat.line + "</li>");
+                   $("#chatbox").append("<li>" + (new Date(parseInt(stat.timestamp))).toString().substring(4, 24) + " <b>" + stat.speaker + "</b>: " + stat.line + "</li>");
                });
     }, "json");
 }
