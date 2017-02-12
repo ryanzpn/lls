@@ -17,6 +17,10 @@ var talk = function() {
     var recipient = $('#recipient').text();
     var content = $('#sendbox').val();
 
+    if (0 == content.length) {
+        return;
+    }
+
     $("#sendbox").val("");
 
     $.post("/chatroom/talk?uname=" + $('#uname').text() + "&recipient=" + $('#recipient').text(), 
@@ -25,7 +29,7 @@ var talk = function() {
                if (data == null) {
                    return;
                }
-               var libody = (new Date(parseInt(data['timestamp'] + "000"))).toString().substring(8, 24) + " <b>" + uname + "</b>: " + content;
+               var libody = (new Date(parseInt(data['timestamp']))).toString().substring(4, 24) + " <b>" + uname + "</b>: " + content;
                $("#chatbox").append("<li>" + libody + "</li>");
 
     }, "json");
