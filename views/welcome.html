@@ -10,14 +10,15 @@
         <div class="form-group">
             <label class="col-md-3 control-label">{{i18n .Lang "username"}}: </label>
             <div class="col-md-5">
-                  <input type="text" class="form-control" name="uname" required>
+                  <input type="text" class="form-control" id="uname" name="uname" required>
             </div>
         </div>
 
         <div class="form-group">
             <label class="col-md-3 control-label">{{i18n .Lang "password"}}: </label>
             <div class="col-md-5">
-                  <input type="password" class="form-control" name="passwd">
+                  <input type="password" class="form-control" id="p_passwd" name="p_passwd">
+                  <input type="hidden" class="form-control" id="passwd" name="passwd">
             </div>
         </div>
 
@@ -28,31 +29,31 @@
         </div>
     </form>
 
-    <form action="/register" method="post" class="form-horizontal">
+    <form class="form-horizontal">
         <div class="form-group">
             <label class="col-md-3 control-label">{{i18n .Lang "username"}}: </label>
             <div class="col-md-5">
-                  <input type="text" class="form-control" name="uname" required>
+                  <input type="text" class="form-control" id="runame" name="runame" required>
             </div>
         </div>
 
         <div class="form-group">
             <label class="col-md-3 control-label">{{i18n .Lang "password"}}: </label>
             <div class="col-md-5">
-                  <input type="password" class="form-control" name="passwd">
+                  <input type="password" class="form-control" id="passwd" name="passwd">
             </div>
         </div>
 
         <div class="form-group">
             <label class="col-md-3 control-label">{{i18n .Lang "confirm_password"}}: </label>
             <div class="col-md-5">
-                  <input type="password" class="form-control" name="confirm">
+                  <input type="password" class="form-control" id="confirm" name="confirm">
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-sm-offset-3 col-sm-10">
-                <button type="submit" class="btn btn-info">{{i18n .Lang "register"}}</button>
+                <button id="registerbtn" type="reset" class="btn btn-info">{{i18n .Lang "register"}}</button>
             </div>
         </div>
 

@@ -69,7 +69,7 @@ var (
 
 func (this *AppController) Register() {
     this.TplName = "welcome.html"  
-    uname := this.GetString("uname")
+    uname := this.GetString("runame")
     passwd := this.GetString("passwd")
     confirm := this.GetString("confirm")
 
@@ -79,7 +79,7 @@ func (this *AppController) Register() {
         return
     }
 
-    if IsValidUserPasswd(uname, passwd) {
+    if IsRegistered(uname) {
         this.Redirect("/", 302)
         return
     }

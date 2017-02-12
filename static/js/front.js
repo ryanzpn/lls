@@ -1,4 +1,6 @@
 
+
+
 var fetch = function() {
     $.getJSON('/front/friends?uname=' + $('#uname').text(), function(data) {
         if (null == data) {
